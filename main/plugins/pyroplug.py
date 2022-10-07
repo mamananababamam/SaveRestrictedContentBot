@@ -21,7 +21,7 @@ async def check(userbot, client, link):
     msg_id = int(link.split("/")[-1])
     if 't.me/c/' in link:
         try:
-            chat = int('-100' + str(link.split("/")[-2]))
+            chat = int('-1000000' + str(link.split("/")[-2]))
             await userbot.get_messages(chat, msg_id)
             return True, None
         except ValueError:
@@ -41,7 +41,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i):
     chat = ""
     msg_id = int(msg_link.split("/")[-1]) + int(i)
     if 't.me/c/' in msg_link:
-        chat = int('-100' + str(msg_link.split("/")[-2]))
+        chat = int('-1000000' + str(msg_link.split("/")[-2]))
         try:
             msg = await userbot.get_messages(chat, msg_id)
             if msg.media:
